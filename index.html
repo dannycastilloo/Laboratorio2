@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 02</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="estilos/estilo.css">
+</head>
+<body>
+    
+    <br><br>
+    <h1>Laboratorio 02</h1>
+    <br><br>
+
+
+    <div class="container">
+        <b><p class="ejercicio">Ejercicio 1</p></b>
+
+        <p>Escribir un programa que permita cargar el nombre de un usuario y su mail por teclado. Mostrar posteriormente los datos en la página HTML.</p>
+        <br>
+
+        <form>
+            <label>Nombre:</label><br><br>
+            <input type="text" id="nombre"><br><br>
+
+            <label>Correo:</label><br><br>
+            <input type="email" id="email"><br><br>
+            <input type="button" value="Mostrar Resultado" onclick="mostrarDatos()" class="boton">
+        </form>
+        <br>
+
+        <div id="resultado1"></div>
+
+        <script>
+            function mostrarDatos(){
+                let nombre = document.getElementById("nombre").value;
+                let email = document.getElementById("email").value;
+                document.getElementById("resultado1").innerHTML = "Nombre: " + nombre + "<br><br>Email: " + email;
+            }
+        </script>
+    </div>
+
+
+
+    <br>
+    <div class="container">
+        <b><p class="ejercicio">Ejercicio 2</p></b>
+
+        <p>Escribir un programa en el cual se ingresen cuatro números, calcular y mostrar la suma de los dos primeros y el producto del tercero y el cuarto.</p>
+        <br>
+
+        <form>
+            <label>Número 1:</label>
+            <input type="number" class="numeros" id="primero">
+            <br><br>
+            <label>Número 2:</label>
+            <input type="number" class="numeros" id="segundo">
+            <br><br>
+            <label>Número 3:</label>
+            <input type="number" class="numeros" id="tercero">
+            <br><br>
+            <label>Número 4:</label>
+            <input type="number" class="numeros" id="cuarto">
+            <br><br>
+
+            <input type="button" value="Mostrar Resultado" onclick="calcularNumeros()" class="boton">
+        </form>
+
+        <br>
+
+        <div id="resultado2"></div>
+
+        <script>
+            function calcularNumeros(){
+                let primero = parseInt(document.getElementById("primero").value);
+                let segundo = parseInt(document.getElementById("segundo").value);
+
+                let suma = primero + segundo;
+
+                let tercero = document.getElementById("tercero").value;
+                let cuarto = document.getElementById("cuarto").value;
+                
+                let producto = tercero * cuarto;
+
+                document.getElementById("resultado2").innerHTML = "Suma de los dos primeros: " + suma + "<br><br>Producto del tercero y cuarto: " + producto;
+            }
+        </script>
+    </div>
+
+    <br><br>
+
+    <div class="container">
+        <b><p class="ejercicio">Ejercicio 3</p></b>
+
+        <p>Realizar un programa que lea por teclado dos números, si el primero es mayor al segundo informar su suma y diferencia, en caso contrario informar el producto y la división del primero respecto al segundo.</p>
+        <br>
+        
+        <form>
+            <label>Número 1:</label>
+            <input type="number" id="numero1" class="numeros">
+            <br><br>
+
+            <label>Número 2:</label>
+            <input type="number" id="numero2" class="numeros">
+            <br><br>
+            <input type="button" value="Mostrar Resultado" onclick="ejercicio3()" class="boton">
+        </form>
+        <br>
+        <div id="ej3"></div>
+
+        <script>
+            function ejercicio3(){
+                let first = parseInt(document.getElementById("numero1").value);
+                let second = parseInt(document.getElementById("numero2").value);
+
+                let suma = first + second;
+
+                let resta = first - second;
+
+                let producto = first * second;
+
+                let division = first / second;
+
+                if(first>second) {
+                    document.getElementById("ej3").innerHTML = "Suma: " + suma + "<br><br>Diferencia: " + resta;
+                } else {
+                    document.getElementById("ej3").innerHTML = "Producto: " + producto + "<br><br>División: " + division;
+                }
+            }
+        </script>
+    </div>
+    
+    
+    <br><br>
+
+
+    <div class="container">
+        <b><p class="ejercicio">Ejercicio 4</p></b>
+
+        <p>Se ingresan tres notas de un alumno, si el promedio es mayor o igual a 4 mostrar un mensaje 'regular', sino 'reprobado'.</p>
+        <br>
+
+        <form>
+            <label>Nota 1:</label>
+            <input type="number" id="nota1" class="numeros">
+            <br><br>
+            <label>Nota 2:</label>
+            <input type="number" id="nota2" class="numeros">
+            <br><br>
+            <label>Nota 3:</label>
+            <input type="number" id="nota3" class="numeros">
+            <br><br>
+            <input type="button" value="Mostrar Resultado" onclick="promedio()" class="boton">
+        </form>
+
+        <div id="ej4"></div><br>
+        
+        <script>
+            function promedio(){
+                let nota1 = parseInt(document.getElementById("nota1").value);
+                let nota2 = parseInt(document.getElementById("nota2").value);
+                let nota3 = parseInt(document.getElementById("nota3").value);
+
+                let prom = (nota1 + nota2 + nota3) / 3 
+
+                if(prom>=4){
+                    document.getElementById("ej4").innerHTML = "Regular";
+                } else {
+                    document.getElementById("ej4").innerHTML = "Reprobado";
+                }
+            }
+
+        </script>
+    </div>
+
+    <br><br>
+
+    <div class="container">
+
+        <b><p class="ejercicio">Ejercicio 5</p></b>
+
+        <p>Se cargan por teclado tres números distintos. Mostrar por pantalla el mayor de ellos.</p>
+        <br>
+
+        <form>
+            <label>Número 1:</label>
+            <input type="number" id="number1" class="numeros">
+            <br><br>
+
+            <label>Número 2:</label>
+            <input type="number" id="number2" class="numeros">
+            <br><br>
+
+            <label>Número 3:</label>
+            <input type="number" id="number3" class="numeros">
+            <br><br>
+
+            <input type="button" value="Mostrar Resultado" onclick="ejercicio5()" class="boton">
+        </form>
+
+        <br>
+
+        <div id="ej5"></div>
+
+        <script>
+            function ejercicio5(){
+                let n1 = parseInt(document.getElementById("number1").value);
+                let n2 = parseInt(document.getElementById("number2").value);
+                let n3 = parseInt(document.getElementById("number3").value);
+
+                let mayor = 0;
+
+                if(n1>n2){
+                    if(n1>n3){
+                        mayor = n1;
+                    }
+                    else {
+                        mayor = n3;
+                    }
+                }
+                else if(n2>n3){
+                    mayor = n2;
+                } else {
+                    mayor = n3;
+                }
+
+                document.getElementById("ej5").innerHTML = "El número mayor es: " + mayor;
+
+            }
+        </script>
+    </div>
+
+    <br><br><br>
+
+    <h4>Desarrollado por Danny Castillo</h4>
+
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

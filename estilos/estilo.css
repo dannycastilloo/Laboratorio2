@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+    color: white;
+}
+
+h4{
+    text-align: center;
+    color: white;
+}
+
+body{
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: rgb(31, 28, 28);
+}
+
+.ejercicio{
+    font-size: 22px;
+}
+
+.numeros{
+    width: 7%;
+}
+
+.container{
+    background-color: white;
+    padding: 3%;
+}
+
+.boton{
+    background-color: rgb(29, 167, 29);
+    color: white;
+}
